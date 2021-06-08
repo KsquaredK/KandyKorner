@@ -30,7 +30,7 @@ export const ProductList = () => {
           <p></p>
           <section className="products">
             {console.log("ProductList: Render", products)}
-            {lroducts.map((product) => {
+            {products.map((product) => {
               return (
                 <div
                   className="product"
@@ -38,9 +38,6 @@ export const ProductList = () => {
                   key={product.id}>
                   <div className="product__name">
                     <em>Name:</em> {product.name}
-                  </div>
-                  <div className="product__address">
-                    <em>Address:</em> {product.address}
                   </div>
                 </div>
               );
