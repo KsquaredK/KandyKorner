@@ -1,17 +1,19 @@
 import React from "react";
-import { Route } from "react-router-dom";
-import { ApplicationViews } from "./ApplicationViews";
-
-
+import { Location } from "./location/Location"
 import "./KandyKorner.css";
 
-export const KandyKorner = () => (
-  <>
-    <Route>
-    <h2> Kandy Korner </h2>
-    <NavBar />
-    <ApplicationViews />
-    </Route>
-  </>
-);
 
+
+export const KandyKorner = () => (
+    <>
+        <h2>Kandy Korner</h2>
+        <small>Sweeeeeeet!.</small>
+
+        <h2>Locations</h2>
+        <article className="locations">
+            <Location />
+            <Location />
+            <Location />
+        </article>
+    </>
+)
