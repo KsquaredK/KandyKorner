@@ -21,15 +21,16 @@ export const ProductTypeList = () => {
 
     return (
         <>
-          <h2>ProductTypes</h2>
+          <h2>Our Product Types</h2>
           <section className="product-types">
             {console.log("ProductTypeList: Render", productTypes)}
             {productTypes.map((productType) => {
               return (
                 <div
-                  className="product-type"id={`product-type--${productType.id}`} key={productType.id}>
-                  <div className="product-type__name">
-                    <em>Name:</em> {productType.name}
+                  className="product-type" id={`product-type--${productType.id}`} key={productType.id}>
+                  {productType.id}:
+                  <div className="product-type__type">
+                    <em>Type:</em> {productType.type}
                   </div>
                 </div>
               );

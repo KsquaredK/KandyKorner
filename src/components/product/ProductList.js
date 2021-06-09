@@ -29,7 +29,10 @@ export const ProductList = () => {
                 <div
                   className="product"id={`product--${product.id}`} key={product.id}>
                   <div className="product__name">
-                    <em>Name:</em> {product.name}
+                    <em>Name: </em> {product.name}
+                  </div>
+                  <div className="product__price">
+                    <em>Price: </em> ${product.price}
                   </div>
                 </div>
               );

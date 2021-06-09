@@ -28,12 +28,12 @@ export const LocationList = () => {
             {locations.map((location) => {
               return (
                 <div className="location" id={`location--${location.id}`} key={location.id}>
-                  <em>Store:</em> {location.id}
+                  <em>Store: </em> {location.id}
                   <div className="location__address">
-                  <em>Address:</em> {location.address}
+                  <em>Address: </em> {location.address}
                   </div>
-                  <div><em>Square Feet:</em>{location.squareFeet}</div>
-                  <div></div>
+                  <div><em>Square Feet: </em>{location.squareFeet}</div>
+                  <div>{location.accessible ? <em>our store is accessible</em> : <em>not an accessible store</em>}</div>
                 </div>
               );
             })}

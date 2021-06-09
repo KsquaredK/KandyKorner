@@ -14,6 +14,10 @@ export const ApplicationViews = () => {
       <LocationProvider>
         <ProductProvider>
           <ProductTypeProvider>
+          <Route exact path="/">
+                  <h2>Kandy Korner</h2>
+                  <h4>sweeeeeet!</h4>
+                </Route>
               <Route path="/locations">
                 <LocationList />
               </Route>
@@ -29,7 +33,7 @@ export const ApplicationViews = () => {
             {/* //   <Route exact path="/Products/detail/:ProductId(\d+)">
             //     <ProductItem />
             //   </Route> */}
-              <Route exact path="/ProductTypes">
+              <Route path="/ProductTypes">
                 <ProductTypeList />
               </Route>
               {/* <Route exact path="/ProductTypes/create">
