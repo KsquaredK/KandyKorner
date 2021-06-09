@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 // This context provides an array of location objects, and 2 functions: getLocation, addLocation
 import { LocationContext } from "./LocationProvider";
 import "./Location.css";
-import { useHistory } from "react-router-dom";
+
 
 export const LocationList = () => {
     // This state changes when `getlocations()` is invoked below
@@ -19,35 +19,29 @@ export const LocationList = () => {
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
   
     // Invoke the useHistory() hook function
-    const history = useHistory();
+
 
     return (
         <>
           <h2>Locations</h2>
-          <button onClick={() => history.push("/locations/create")}>
-            Add Location
-          </button>
-          <p></p>
-          <section className="locations">
+          <article className="locations">
             {console.log("LocationList: Render", locations)}
             {locations.map((location) => {
               return (
-                <div
-                  className="location"
-                  id={`location--${location.id}`}
-                  key={location.id}>
-                  <div className="location__name">
-                    <em>Name:</em> {location.name}
-                  </div>
+                <div className="location" id={`location--${location.id}`} key={location.id}>
+                  <em>Store:</em> {location.id}
                   <div className="location__address">
-                    <em>Address:</em> {location.address}
+                  <em>Address:</em> {location.address}
                   </div>
                 </div>
               );
             })}
-          </section>
+          </article>
         </>
       );
     };
     
+    /*  <div className="location__name">
+    <em>Name:</em> {location.name}
+    </div> */
 

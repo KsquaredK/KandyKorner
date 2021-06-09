@@ -1,26 +1,26 @@
 import React from "react";
-import { Location } from "./location/Location"
-import { Product } from "./product/Product"
+import { LocationList } from "./location/LocationList"
+import { LocationProvider } from "./location/LocationProvider"
+import { ProductList } from "./product/ProductList"
+import { ProductProvider } from "./product/ProductProvider"
 import "./KandyKorner.css";
+
 
 
 
 export const KandyKorner = () => (
     <>
         <h2>Kandy Korner</h2>
-        <small>Sweeeeeeet!.</small>
-
-        <h2>Locations</h2>
+        <small>Sweeeeeeet!</small>
         <article className="locations">
-            <Location />
-            <Location />
-            <Location />
+            < LocationProvider >
+                <LocationList />
+            </LocationProvider>
         </article>
-        <h2>Products</h2>
         <article className="products">
-            <Product />
-            <Product />
-            <Product />
+            < ProductProvider >
+                <ProductList />
+            </ProductProvider>
         </article>
     </>
 )

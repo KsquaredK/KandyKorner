@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from "react";
 // This context provides an array of product objects, and 2 functions: getProduct, addProduct
 import { ProductContext } from "./ProductProvider";
 import "./Product.css";
-import { useHistory } from "react-router-dom";
 
 export const ProductList = () => {
     // This state changes when `getlroducts()` is invoked below
@@ -18,24 +17,17 @@ export const ProductList = () => {
       // The empty brackets cause this logic to run only once.
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
   
-    // Invoke the useHistory() hook function
-    const history = useHistory();
+
 
     return (
         <>
           <h2>Products</h2>
-          <button onClick={() => history.push("/products/create")}>
-            Add Product
-          </button>
-          <p></p>
           <section className="products">
             {console.log("ProductList: Render", products)}
             {products.map((product) => {
               return (
                 <div
-                  className="product"
-                  id={`product--${product.id}`}
-                  key={product.id}>
+                  className="product"id={`product--${product.id}`} key={product.id}>
                   <div className="product__name">
                     <em>Name:</em> {product.name}
                   </div>
