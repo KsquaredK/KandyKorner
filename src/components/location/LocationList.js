@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, } from "react";
 // This context provides an array of location objects, and 2 functions: getLocation, addLocation
 import { LocationContext } from "./LocationProvider";
 import "./Location.css";
@@ -9,6 +9,7 @@ export const LocationList = () => {
     //  useContext allows this module to use data & functions the parent component exposes
     //Any descendant - child, granchild, etc. - can invoke useContext to gain direct access to keys exposed
     const { locations, getLocations } = useContext(LocationContext);
+
   
     //useEffect - reach out to the world for something not handled during render
     // State change causes re-render - be careful not to create infinite loop.
@@ -19,24 +20,24 @@ export const LocationList = () => {
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
   
     // Invoke the useHistory() hook function
-
-
     return (
         <>
           <h2>Locations</h2>
-          <article className="locations">
+          <section className="locations">
             {console.log("LocationList: Render", locations)}
             {locations.map((location) => {
               return (
                 <div className="location" id={`location--${location.id}`} key={location.id}>
-                  <em>Store:</em> {location.id}
+                  <em>Store: </em> {location.id}
                   <div className="location__address">
-                  <em>Address:</em> {location.address}
+                  <em>Address: </em> {location.address}
                   </div>
+                  <div><em>Square Feet: </em>{location.squareFeet}</div>
+                  <div>{location.accessible ? <em>our store is accessible</em> : <em>not an accessible store</em>}</div>
                 </div>
               );
             })}
-          </article>
+          </section>
         </>
       );
     };

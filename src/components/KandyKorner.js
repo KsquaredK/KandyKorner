@@ -1,30 +1,48 @@
-import React from "react";
-import { LocationList } from "./location/LocationList"
-import { LocationProvider } from "./location/LocationProvider"
-import { ProductList } from "./product/ProductList"
-import { ProductProvider } from "./product/ProductProvider"
-import { ProductTypeList } from "./productType/ProductTypeList"
-import { ProductTypeProvider } from "./productType/ProductTypeProvider"
-import "./KandyKorner.css";
-
-
-
+import React from "react"
+import { Route } from "react-router-dom"
+import { NavBar } from "./nav/NavBar"
+import { ApplicationViews } from "./ApplicationViews"
+import "./KandyKorner.css"
 
 export const KandyKorner = () => (
     <>
-        <h2>Kandy Korner</h2>
-        <small>Sweeeeeeet!</small>
-        <article className="locations">
-            < LocationProvider >
-                <LocationList />
-            </LocationProvider>
-        </article>
-        <article className="products">
-            < ProductProvider >
-            < ProductTypeProvider>
-                <ProductList />
-            </ProductTypeProvider>
-            </ProductProvider>
-        </article>
+    <NavBar />
+    <ApplicationViews />
     </>
-)
+);
+
+
+/* import React from "react";
+import { Route, Redirect } from "react-router-dom";
+import { ApplicationViews } from "./ApplicationViews";
+import { NavBar } from "./nav/NavBar";
+import { Login } from "./auth/Login";
+import { Register } from "./auth/Register";
+import "./KandyKorner.css";
+
+export const Kennel = () => (
+  <>
+    <Route
+      render={() => {
+        if (localStorage.getItem("kennel_customer")) {
+          return (
+            <>
+              <NavBar />
+              <ApplicationViews />
+            </>
+          );
+        } else {
+          return <Redirect to="/login" />;
+        }
+      }}
+    />
+
+    <Route path="/login">
+      <Login />
+    </Route>
+    <Route path="/register">
+      <Register />
+    </Route>
+  </>
+);
+*/
