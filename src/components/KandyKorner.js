@@ -3,6 +3,8 @@ import { LocationList } from "./location/LocationList"
 import { LocationProvider } from "./location/LocationProvider"
 import { ProductList } from "./product/ProductList"
 import { ProductProvider } from "./product/ProductProvider"
+import { ProductTypeList } from "./productType/ProductTypeList"
+import { ProductTypeProvider } from "./productType/ProductTypeProvider"
 import "./KandyKorner.css";
 
 
@@ -19,7 +21,9 @@ export const KandyKorner = () => (
         </article>
         <article className="products">
             < ProductProvider >
+            < ProductTypeProvider>
                 <ProductList />
+            </ProductTypeProvider>
             </ProductProvider>
         </article>
     </>
